@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap" rel="stylesheet">
+    <script src="./script.js" defer></script>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+<div id="flexxer">
+    <div id="calculator">
+
+        <header>
+            <span id="title">Vinnie</span>
+            <div id="theme-selector-container">
+                <div id="theme-selector-collumn-1"><span>THEME</span></div>
+                <div id="theme-selector-collumn-2">
+                    <div id="selector-row-1" class="selector-row">
+                        <ol>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                        </ol>
+                    </div>
+                    <div id="selector-row-2" class="selector-row">
+                        <input type="range" min="1" max="3" value="1" id="selector-input">
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+        <main>
+            <div id="result-container">
+                <div id="result"></div>
+            </div>
+
+            <div id="buttons-container">
+                <ul id="buttons">
+                    <li id="calc-button-1"><button type="button" class="calc-button number-button" value="7">7</button></li>
+                    <li id="calc-button-2"><button type="button" class="calc-button number-button" value="8">8</button></li>
+                    <li id="calc-button-3"><button type="button" class="calc-button number-button" value="9">9</button></li>
+                    <li id="calc-button-4"><button type="button" class="calc-button" id="del-button">DEL</button></li>
+                    <li id="calc-button-5"><button type="button" class="calc-button number-button" value="4">4</button></li>
+                    <li id="calc-button-6"><button type="button" class="calc-button number-button" value="5">5</button></li>
+                    <li id="calc-button-7"><button type="button" class="calc-button number-button" value="6">6</button></li>
+                    <li id="calc-button-8"><button type="button" class="calc-button operator-button" value="+">+</button></li>
+                    <li id="calc-button-9"><button type="button" class="calc-button number-button" value="1">1</button></li>
+                    <li id="calc-button-10"><button type="button" class="calc-button number-button" value="2">2</button></li>
+                    <li id="calc-button-11"><button type="button" class="calc-button number-button" value="3">3</button></li>
+                    <li id="calc-button-12"><button type="button" class="calc-button operator-button" value="-">-</button></li>
+                    <li id="calc-button-13"><button type="button" class="calc-button number-button" value=".">.</button></li>
+                    <li id="calc-button-14"><button type="button" class="calc-button number-button" value="0">0</button></li>
+                    <li id="calc-button-15"><button type="button" class="calc-button operator-button" value="/">/</button></li>
+                    <li id="calc-button-16"><button type="button" class="calc-button operator-button" value="*">x</button></li>
+                    <li id="calc-button-17"><button type="button" class="calc-button" id="reset-button">RESET</button></li>
+                    <li id="calc-button-18"><button type="button" class="calc-button" id="equal-button">=</button></li>
+                </ul>
+            </div>
+        </main>
+
+    </div>
+    
+</div>
+
+</body>
+</html>

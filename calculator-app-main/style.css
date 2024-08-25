@@ -1,0 +1,424 @@
+
+ /* RESET*/
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    background: transparent;
+    cursor: pointer;
+    width: 15rem;
+  }
+  /* vars */
+  :root{
+    /* Theme 1 */
+      /* Box Shadows */
+        --bs-1: hsl(28, 16%, 65%);
+        --bs-2: hsl(224, 28%, 35%);
+        --bs-3: hsl(6, 70%, 34%);
+
+      /* buttons background */
+        --bbg-1: hsl(30, 25%, 89%);
+        --bbg-2: hsl(225, 21%, 49%);
+        --bbg-3: hsl(6, 63%, 50%);
+
+      /* misc */
+        --text-1: hsl(221, 14%, 31%);
+        --text-2: hsl(0, 0%, 100%);
+        --main-bg: hsl(222, 26%, 31%);
+        --input-bg: hsl(223, 31%, 20%);
+        --result-bg: rgba(0, 0, 0, .5);
+        --keypad-bg: rgba(0, 0, 0, .4);
+}
+
+  /* medias*/
+
+@keyframes click {
+    from{
+        box-shadow: -4px 3px 0px 1px var(--bs-1);
+        transform: translate(0px, 0px);    
+    }to{
+        box-shadow: 0px 0px 0px 0px var(--bs-1);
+        transform: translate(-4px, 3px);
+    
+    }
+}
+
+@keyframes clickBlue {
+    
+    from{
+        box-shadow: -4px 3px 0px 1px var(--bs-2);
+        transform: translate(0px, 0px);    
+    }to{
+        box-shadow: 0px 0px 0px 0px var(--bs-2);
+        transform: translate(-4px, 3px);
+    
+    }
+}
+
+@keyframes clickRed {
+    
+    from{
+        box-shadow: -4px 3px 0px 1px var(--bs-3);
+        transform: translate(0px, 0px);    
+    }to{
+        box-shadow: 0px 0px 0px 0px var(--bs-3);
+        transform: translate(-4px, 3px);
+    
+    }
+}
+
+
+ /* ---- */
+
+
+body{
+    font-family: 'League Spartan', sans-serif;
+    color: var(--text-2);
+    background-color: var(--main-bg);
+    height: 95vh;
+}
+
+#flexxer{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#calculator{
+    width: 540px;
+    height: 720px;
+    display: flex;
+    flex-direction: column;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+#title{
+    font-size: 1.8rem;
+}
+
+#theme-selector-container{
+    display: flex;
+    align-items: flex-end;
+}
+
+#theme-selector-collumn-1{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 7px;
+    margin-bottom: 7px;
+}
+
+#theme-selector-collumn-2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15px;
+    width: 50px;
+}
+
+.selector-row{
+    align-items: center;
+}
+
+#selector-row-1{
+    width: 100%;
+}
+
+#selector-row-1 ol{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 0 3px;
+}
+
+#selector-row-2{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+#selector-row-2 input{
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+#selector-input::-webkit-slider-runnable-track {
+    background: var(--input-bg);
+    height: 1.55rem;
+    border-radius: 20px;
+    padding: 0 1px 0 2px;
+}
+
+#selector-input::-moz-range-track {
+    background: var(--input-bg);
+    height: 1.55rem;
+    width: 107%;
+    border-radius: 20px;
+}
+
+#selector-input::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    margin-top: 2px; /* Centers thumb on the track */
+    background-color: var(--bbg-3);
+    height: 1.3rem;
+    width: 1.3rem;
+    border-radius: 20px;
+}
+
+#selector-input::-moz-range-thumb {
+    border: none; /*Removes extra border that FF applies*/
+    background-color: var(--bbg-3);
+    height: 1.3rem;
+    width: 1.3rem;
+    border-radius: 20px;
+    transform: translate(.3px, 0px);
+}
+
+main{
+    width: 100%;
+    height: 100%;
+}
+
+#result-container{
+    height: 15%;
+    width: 100%;
+    background-color: var(--result-bg);
+    border-radius: 15px;
+
+    margin-top: 40px;
+    padding: 15px 0 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    font-size: 3.5rem;
+}
+
+#result{
+    width: 100%;
+    height: 100%;
+    margin: 15px;
+    display: flex;
+    justify-content: end;
+    text-transform: capitalize;
+    word-break: break-all;
+    text-align: end;
+
+    align-items: center;
+}
+
+#buttons-container{
+    margin-top: 30px;
+    background-color: var(--keypad-bg);
+    padding: 30px;
+    border-radius: 15px;
+}
+
+#buttons{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+#calc-button-1 { grid-area: 1 / 1 / 2 / 2; }
+#calc-button-2 { grid-area: 1 / 2 / 2 / 3; }
+#calc-button-3 { grid-area: 1 / 3 / 2 / 4; }
+#calc-button-4 { grid-area: 1 / 4 / 2 / 5; }
+#calc-button-5 { grid-area: 2 / 1 / 3 / 2; }
+#calc-button-6 { grid-area: 2 / 2 / 3 / 3; }
+#calc-button-7 { grid-area: 2 / 3 / 3 / 4; }
+#calc-button-8 { grid-area: 2 / 4 / 3 / 5; }
+#calc-button-9 { grid-area: 3 / 1 / 4 / 2; }
+#calc-button-10 { grid-area: 3 / 2 / 4 / 3; }
+#calc-button-11 { grid-area: 3 / 3 / 4 / 4; }
+#calc-button-12 { grid-area: 3 / 4 / 4 / 5; }
+#calc-button-13 { grid-area: 4 / 1 / 5 / 2; }
+#calc-button-14 { grid-area: 4 / 2 / 5 / 3; }
+#calc-button-15 { grid-area: 4 / 3 / 5 / 4; }
+#calc-button-16 { grid-area: 4 / 4 / 5 / 5; }
+#calc-button-17 { grid-area: 5 / 1 / 6 / 3; }
+#calc-button-18 { grid-area: 5 / 3 / 6 / 5; }
+
+.calc-button{
+    width: 100%;
+    height: 70px;
+    border-radius: 15px;
+    font-size: 42px;
+    font-family: 'League Spartan', sans-serif;
+    background-color: var(--bbg-1);
+    border: 1px solid var(--keypad-bg);
+    box-shadow: -4px 3px 0 1px var(--bs-1);
+    color: var(--text-1);
+}
+
+.calc-button:hover{cursor: pointer}
+
+.clicked{
+animation: click 100ms ease-in-out 0s 2 alternate both;
+}
+
+.clickedBlue{
+animation: clickBlue 100ms ease-in-out 0s 2 alternate both;
+}
+
+.clickedRed{
+animation: clickRed 100ms ease-in-out 0s 2 alternate both;
+}
+
+#reset-button, #del-button{
+    background-color: var(--bbg-2);
+    box-shadow: -4px 3px 0 1px var(--bs-2);
+    color: var(--text-2);
+    font-size: 1.75rem;
+}
+
+#equal-button{
+    background-color: hsl(6, 63%, 50%);
+    box-shadow: -4px 3px 0 1px hsl(6, 70%, 34%);
+    color: var(--text-2);
+    font-size: 1.75rem;
+}
+
+#selector-row-2::after{
+    content: "";
+    width: 3.5rem;
+    height: 1.5rem;
+    position: absolute;
+    border-radius: 20px;
+    opacity: 0;
+    cursor: pointer;
+}
+
+/* equal button */
+.theme3{
+    background-color: hsl(176, 100%, 44%)!important;
+    box-shadow: -4px 3px 0 1px hsl(177, 92%, 70%)!important;
+    border: 1px solid rgba(255, 255, 255, .4);
+    color: black!important;
+}
+
+/* responsive */
+
+@media screen and (max-width: 560px) {
+
+    #calculator{
+        margin: 20px;
+    }
+
+    #buttons{
+        grid-column-gap: 15px;
+        grid-row-gap: 15px;
+    }
+
+
+}
+
+@media screen and (max-width: 430px) {
+
+    #calculator{
+        width: 100%;
+        padding: 5px 25px;
+    }
+
+    header{
+        margin-top: 25px;
+    }
+
+    #result{
+        
+        padding: 10px;
+    }
+
+    #buttons-container{
+        margin-top: 15px;
+        padding: 15px;
+    }
+    
+    #buttons{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-template-rows: repeat(5, 1fr);
+        grid-column-gap: 10px;
+        grid-row-gap: 10px;
+    }
+
+    .calc-button{
+        height: 50px;
+        border-radius: 10px;
+        font-size: 23px;
+    }
+
+    #reset-button, #del-button{
+        font-size: 22px;
+    }
+    
+    #equal-button{
+        font-size: 35px;
+    }
+    
+    
+}
